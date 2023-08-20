@@ -1,0 +1,280 @@
+body{
+    background-color: #3D087B;
+}
+
+@font-face {
+    font-family: Bauhaus;
+    src: url(./BauhausHeavyBT.ttf);
+}
+
+
+.child1{
+    background-image: url(./clock_logo.png);
+    position: absolute;
+    top: 34px;
+    
+    background-size: cover;
+    left: 124px;
+    height: 77px;
+    width: 204px;
+   
+}
+
+.form1{
+    position: absolute;
+    top: 149px;
+    left: 124px;
+    width: 566px;
+    height: 363px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.list1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    font-family: 'Manrope', sans-serif;
+    
+    font-size: 18px;
+    color: #3D087B;
+}
+
+.sel1{
+    width: 281px;
+    color: #3D087B;
+    border: 1px solid #EDEDED;
+    height: 45px;
+    padding-left: 10PX;
+}
+
+
+select {
+    appearance: none;
+}
+
+.icon1{
+    background-image: url(./down-arrow.png);
+    background-repeat: no-repeat;
+    
+    background-size: 10px;
+   
+    background-position-y: center;
+    background-position-x: 90%;
+}
+
+
+
+.hor1{
+    transform: rotate(180deg);
+    top: 0px;
+    left: -238px;
+    width: 0px;
+    height: 33px;
+    position: relative;
+}
+
+
+.good1{
+    background-color: #5F0089;
+    color: #FFFFFF;
+    font-size: 27px;
+    position: absolute;
+    top: 527px;
+left: 124px;
+width: 566px;
+height: 77px;
+font-family: Bauhaus;
+border-radius: 10px;
+display: flex;
+    align-items: center;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.flex1{
+    display: flex;
+align-items: center;
+justify-content: center;
+color: #FFFFFF;
+}
+
+.set1{
+    position: absolute;
+    top: 624px;
+left: 124px;
+width: 299px;
+height: 50px;
+border-radius: 4px;
+font-size: 24px;
+
+background-image: linear-gradient(113deg, #6E54EC 0%, #CB52F8 40%, #FC5EFF 81%, #F1A7C5 100%) ;
+transition: background-image ease-out 2s, content;
+}
+
+.set1:hover{
+    background-image: linear-gradient(293deg, #6E54EC 0%, #CB52F8 40%, #FC5EFF 81%, #F1A7C5 100%) ;
+   
+}
+
+.set1:hover span {
+    display: none;
+  }
+
+
+.set1:hover:before {
+    content: "Party time";
+}
+
+.box2{
+    position: absolute;
+    top: 615px;
+left: 437px;
+width: 253px;
+height: 117px;
+border-radius: 10px;
+background-color: #5F0089;
+color: #F25CFE;
+text-align: left;
+font-size: 15px;
+}
+
+.time{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.box3{
+   
+    top: 67px;
+left: 785px;
+width: 379px;
+height: 130px;
+opacity: 0.23;
+}
+
+
+.trb{
+    background-color: #FFFFFF;
+border-radius: 10px;
+position: absolute;
+}
+
+.box4{
+    top: 55px;
+    left: 766px;
+    width: 416px;
+    height: 130px;
+    opacity: 0.71;
+}
+
+.box5{
+    top: 42px;
+left: 706px;
+width: 536px;
+height: 130px;
+opacity: 1;
+}
+
+.box6{
+    top: 212px;
+left: 706px;
+width: 536px;
+height: 118px;
+color: #8E53F0;
+
+font-family: Bauhaus;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+font-weight: 900;
+padding: 20px;
+    box-sizing: border-box;
+}
+
+.box7{
+    top: 345px;
+left: 707px;
+width: 536px;
+height: 341px;
+background-image: url(./Component\ 30\ –\ 1.jpg);
+border-radius: 10px;
+}
+
+.relative{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.sub1{
+    color: #3D087B;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    position: relative;
+    right: 25px;
+}
+
+.sub2{
+    background-image: url(./timeline.jpg);
+    width: 80px;
+    height: 90px;
+}
+
+.sub3{
+    color: #8A11BF;
+    font-size: 45px;
+    margin: 4px;
+}
+
+.sub4{
+    background-image: url(./timeline.jpg);
+    width: 82px;
+    height: 90px;
+}
+
+.sub7{
+    background-image: url(./AM_svg.jpg);
+    width: 82px;
+    height: 90px;
+    font-size: 36px;
+    color: #FFFFFF;
+    position: relative;
+    left: 15px;
+}
+
+.fon1{
+    font-size: 36px;
+    color: #8A11BF;
+}
+
+.fon2{
+    font-size: 23px;
+    color: #5F0089;
+}
+
+
+.relative1{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .sub1{
+    position: absolute;
+top: 94px;
+left: 745px;
+width: 46px;
+height: 26px;
+z-index: 2;
+color: #3D087B;
+font-size: 20px;
+font-weight: 600;
+font-family: 'Manrope', sans-serif;
+} */

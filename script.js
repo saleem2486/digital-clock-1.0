@@ -1,93 +1,105 @@
-function clock(){
-    var hours = document.getElementById("hr");
-    var minutes = document.getElementById("min");
-    var seconds = document.getElementById("sec");
-    var am = document.getElementById("am");
+let hh = document.getElementById('hrs')
+let mm = document.getElementById('mins')
+let ss =  document.getElementById('secs')
+let AMPM = document.querySelector('.sub7');
 
-    var time = new Date();
-    var hrs  = time.getHours();
-    var mins = time.getMinutes();
-    var secs = time.getSeconds();
-    var am_pm = "AM";
+let wakeup = document.querySelector('.good1');
+let message = document.querySelector('.box6');
 
-    if (hrs == 0) {
-        hrs = 12;
+function theTimer() {
+    let d =new Date();
+    let hours =d.getHours();
+    let minutes = d.getMinutes();
+    let seconds = d.getSeconds();
+    hh.innerHTML = hours;
+    mm.innerHTML = minutes;
+    ss.innerHTML = seconds;
+
+   // To change content below the clock
+    if (hours>=4 && hours<10 ){
+        message.innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!"
+        
     }
-    if (hrs > 12) {
-        hrs = hrs - 12;
-        am_pm = "PM";
+    else if (hours>=10 && hours<16 ){
+        message.innerHTML = " LET'S HAVE SOME LUNCH !!"
+        
     }
-    if (hrs < 10) {
-        hrs = "0" + hrs;
+    else if (hours>=16 && hours<20 ){
+        message.innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!"
     }
-    if (mins < 10) {
-        mins = "0" + mins;
+    else{
+        message.innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP"
     }
-    if (secs < 10) {
-        secs = "0" + secs;
+
+ 
+    
+   // to make clock in 12 hrs format
+    if (hh.innerHTML>12){
+        hh.innerHTML = hh.innerHTML - 12;
+        AMPM.innerHTML = "PM"
     }
-    hours.innerText   = hrs;
-    minutes.innerText = mins;
-    seconds.innerText = secs;
-    am.innerText = am_pm;
+    
 }
-clock();
-setInterval(clock, 1000);
+setInterval(() =>{
+    theTimer();
+},1000)
 
 
-function set(){
+but1 = document.querySelector('.set1')
 
-    var x=  document.getElementById("select1").value;
+but1.addEventListener('click',() =>{
+    let d =new Date();
+    let hours =d.getHours();
+
+    let img = document.querySelector('#theImage')
     
-    var y = document.getElementById("select2").value;
-    var z = document.getElementById("select3").value;
-    var a = document.getElementById("select4").value;
-    var hour = new Date().getHours();
+    let night = document.getElementById('night');
+    let ntext = night.options[night.selectedIndex].textContent;
+    let nPrint = document.querySelector('#nighttime');
+    nPrint.textContent = ntext ;
 
-    if(x==hour){
+    let nap = document.getElementById('nap');
+    let naptext = nap.options[nap.selectedIndex].textContent;
+    let napPrint = document.querySelector('#naptime');
+    napPrint.textContent = naptext
 
-        document.getElementById("box5").style.backgroundImage="url(./pic.png)";
-        document.getElementById("grab").innerText='Wake Up !!';
-        document.getElementById("box6").innerText="Good Morning !!";
+    let lunch = document.getElementById('lunch');
+    let ltext = lunch.options[lunch.selectedIndex].textContent;
+    let lPrint = document.querySelector('#lunchtime');
+    lPrint.textContent = ltext
+
+    let morn = document.getElementById('morning');
+    let mtext = morn.options[morn.selectedIndex].textContent;
+    let mPrint = document.querySelector('#waketime');
+    mPrint.textContent = mtext
+
+    console.log("aaaa");
+    console.log(hours);
+    console.log(morn.value);
+    console.log(lunch.value);
+    console.log(nap.value);
+    console.log(night.value);
+     // to change the text and image based on selected option 
+   
+    if(parseInt(morn.value) === hours){
+        wakeup.innerHTML = "GOOD MORNING!! WAKE UP !!"
+        img.src="./Component 30 – 1.png"
     }
-
-    else if(y==hour){
-        document.getElementById("box5").style.backgroundImage="url(./lunch2.png)";
-        document.getElementById("grab").innerText="GOOD AFTER NOON";
-        document.getElementById("box6").innerText="Its Lunch Time !!"
+    else if(parseInt(lunch.value) === hours){
+        wakeup.innerHTML = "GOOD AFTERNOON !! TAKE SOME SLEEP"
+        img.src="./Component 31 – 1.png"
+      
     }
+    else if(parseInt(nap.value) === hours){
+        wakeup.innerHTML = "GOOD EVENING !!";
+        img.src="./lunch_image.png";
+       
+    }
+    else if(parseInt(night.value) === hours){
+        wakeup.innerHTML = "GOOD NIGHT !!"
+        img.src="./Component 32 – 1.png";
+        console.log(wakeup.innerHTML);
+    }
+})
 
-   else if(z==hour){
-        document.getElementById("box5").style.backgroundImage="url(./nap2.svg)"
-        document.getElementById("grab").innerText="Good Evening !!";
-        document.getElementById("box6").innerText="its Nap Time !!";
-    }    
-   else if(a==hour){
-        document.getElementById("box5").style.backgroundImage="url(./night2.svg)"
-        document.getElementById("grab").innerText="Good Night !!";
-        document.getElementById("box6").innerText=" Go For Sleep !!";
-    }    
-    getOption();
- }
- function getOption() {
-
-
-    var e = document.getElementById("select1");
-    var text1 = e.options[e.selectedIndex].text;
-    
-    var f = document.getElementById("select2");
-    var text2 = f.options[f.selectedIndex].text;
-    
-    var g = document.getElementById("select3");
-      var text3 = g.options[g.selectedIndex].text;
-
-      var h = document.getElementById("select4");
-      var text4 = h.options[h.selectedIndex].text;
-    
-    
-         var idExist = document.getElementById("mudasir");
-        if(idExist){
-            idExist.innerHTML = `Wake Up Time : ${text1} <br> Lunch Time : ${text2}<br> Nap Time : ${text3}<br> Sleep Time :${text4}`;
-        }
-     
-    } 
+ 
